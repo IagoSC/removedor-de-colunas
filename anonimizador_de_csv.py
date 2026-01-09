@@ -136,14 +136,11 @@ class HeaderMatcherApp(ctk.CTk):
     def process_dbf(self):
         table = DBF(self.file_path, encoding=self.file_encoding)
         self.file_lines = table._count_records()
-        print("Total de linhas no arquivo:", self.file_lines)
         new_file = None
         try:
             new_file = self.handle_headers(table.field_names, self.target_columns)
             for index, record in enumerate(table.records):
                 self.handle_row(new_file, list(record.values()), index)  # +2 para considerar o cabeçalho e índice começando em 0
-                if (self.file_lines == index): break
-                print("Processing record:", index + 1)
         except Exception as e:
             os.remove(self.new_file_name)  # Remove o arquivo criado em caso de erro
             self.log_output(f"Finalizando Processo", "error")
