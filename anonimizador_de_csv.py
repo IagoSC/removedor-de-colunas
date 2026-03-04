@@ -64,6 +64,7 @@ class HeaderMatcherApp(ctk.CTk):
         )
         if filename:
             self.file_path = filename
+            self.log_output(f"Arquivo selecionado: {filename}", "success")
             self.lbl_filename.configure(text=os.path.basename(filename), text_color=("black", "white"))
             detect_encoding = chardet.detect(open(filename, 'rb').read(100_000)) # Detecta enconding utilizando apenas os primeiros 100KB do arquivo
             self.file_encoding = detect_encoding['encoding']
