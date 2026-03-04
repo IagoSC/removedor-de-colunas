@@ -47,7 +47,7 @@ class HeaderMatcherApp(ctk.CTk):
         self.txt_output.grid(row=6, column=0, padx=20, pady=(5, 20), sticky="nsew")
 
         # Configure text tags for coloring messages
-        self.txt_output._textbox.tag_configure("normal", foreground="white")
+        self.txt_output._textbox.tag_configure("normal", foreground="gray")
         self.txt_output._textbox.tag_configure("warn", foreground="orange")
         self.txt_output._textbox.tag_configure("error", foreground="red")
         self.txt_output._textbox.tag_configure("success", foreground="green")
@@ -76,7 +76,7 @@ class HeaderMatcherApp(ctk.CTk):
             self.extension = os.path.splitext(filename)[1].lower()
 
     def count_lines(self, file_path: str) -> int:
-        with open(file_path, 'r', encoding='utf-8') as f:  # Use the detected encoding if available
+        with open(file_path, 'r', encoding=self.file_encoding) as f:  # Use the detected encoding if available
             self.file_lines = sum(1 for _ in f)
 
     def handle_headers(self, headers: list[str], target_strings: list[str]):
