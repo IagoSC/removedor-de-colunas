@@ -1,0 +1,17 @@
+﻿{
+    "appName":  "anonimizador_de_csv",
+    "version":  "1.0.0",
+    "builtAtUtc":  "2026-03-04T17:59:34.8278701Z",
+    "buildHost":  "IAGOSC",
+    "sourceCommit":  "4d7e75a",
+    "files":  [
+                  {
+                      "name":  "anonimizador_de_csv_v1.0.0.exe",
+                      "sizeBytes":  31357412
+                  },
+                  {
+                      "name":  "README.md",
+                      "sizeBytes":  5373
+                  }
+              ]
+}

@@ -3,3 +3,4 @@ dist/*
 *.csv
 *.dbf
 *.DBF
+anonimizador_de_csv.spec
